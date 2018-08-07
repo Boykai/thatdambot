@@ -32,8 +32,9 @@ function processData(data){
     videoData.transcriptText += " " + data.videos[0].insights.transcript[x].text;
     videoData.transcriptOcr += " " + data.videos[0].insights.transcript[x].ocr;
   }
-
+  console.log("here" + data.accountId);
   videoData.videoPath = "https://www.videoindexer.ai/accounts/" + data.accountId + "/videos/" + data.id;
+
   return videoData;
 
 }
