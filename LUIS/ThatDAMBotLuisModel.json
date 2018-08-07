@@ -1,0 +1,232 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "0.1",
+  "name": "ThatDAMBotLuisModel",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "SearchAssets"
+    },
+    {
+      "name": "Utilities.Help",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Help"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "name": "asset-type",
+      "roles": []
+    },
+    {
+      "name": "search-keywords",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "can you help me ?",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "can you help me here",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "do you have pictures of brad pitt",
+      "intent": "SearchAssets",
+      "entities": [
+        {
+          "entity": "asset-type",
+          "startPos": 12,
+          "endPos": 19
+        },
+        {
+          "entity": "search-keywords",
+          "startPos": 24,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "find mountain videos",
+      "intent": "SearchAssets",
+      "entities": [
+        {
+          "entity": "search-keywords",
+          "startPos": 5,
+          "endPos": 12
+        },
+        {
+          "entity": "asset-type",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "find pictures of edward norton",
+      "intent": "SearchAssets",
+      "entities": [
+        {
+          "entity": "asset-type",
+          "startPos": 5,
+          "endPos": 12
+        },
+        {
+          "entity": "search-keywords",
+          "startPos": 17,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "find pictures of mountains in snow",
+      "intent": "SearchAssets",
+      "entities": [
+        {
+          "entity": "asset-type",
+          "startPos": 5,
+          "endPos": 12
+        },
+        {
+          "entity": "search-keywords",
+          "startPos": 17,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "find pictures of water",
+      "intent": "SearchAssets",
+      "entities": [
+        {
+          "entity": "asset-type",
+          "startPos": 5,
+          "endPos": 12
+        },
+        {
+          "entity": "search-keywords",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "help me please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help me to start",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help me to understand more please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help me with this",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hola",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i need your help",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "i want to find car photos",
+      "intent": "SearchAssets",
+      "entities": [
+        {
+          "entity": "search-keywords",
+          "startPos": 15,
+          "endPos": 17
+        },
+        {
+          "entity": "asset-type",
+          "startPos": 19,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "please help me",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "please help me i want to finish",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "show me pictures of mountains",
+      "intent": "SearchAssets",
+      "entities": [
+        {
+          "entity": "asset-type",
+          "startPos": 8,
+          "endPos": 15
+        },
+        {
+          "entity": "search-keywords",
+          "startPos": 20,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "what's your name",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "yo",
+      "intent": "Greeting",
+      "entities": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "myBlob",
+            "type": "blobTrigger",
+            "direction": "in",
+            "dataType": "binary",
+            "path": "videos/{name}",
+            "connection":"AzureWebJobsStorage"
+        }
+    ]
+}
