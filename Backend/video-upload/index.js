@@ -61,12 +61,10 @@ module.exports = function(context, myBlob) {
           context.done();
         })
         .catch(err => {
-          context.log(err);
           context.done(err);
         });
     })
     .catch(err => {
-      context.log(JSON.stringify(err));
       context.done(err);
     });
 };

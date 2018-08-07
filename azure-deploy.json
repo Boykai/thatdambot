@@ -54,7 +54,7 @@
      "viID":{
          "type": "string",
          "metadata": {
-            "description": "Video Indexer URL"
+            "description": "Video Indexer ID"
           } 
      },
      "viRegion":{
@@ -148,7 +148,7 @@
             {
               "name": "COMP_VISION_URL",
               "value":
-                "[concat(resourceGroup().location,'.api.cognitive.microsoft.com/vision/v1.0')]"
+                "[concat('https:\/\/', resourceGroup().location,'.api.cognitive.microsoft.com/vision/v1.0')]"
             },
             {
               "name": "SEARCH_URL",

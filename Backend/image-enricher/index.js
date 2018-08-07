@@ -4,6 +4,7 @@ const uuidV4 = require('uuid/v4');
 
 
 module.exports = function (context, myBlob) {
+    console.log("here");
     context.log("JavaScript blob trigger function processed blob \n Name:", context.bindingData.name, "\n Blob Size:", myBlob.length, "Bytes");
     Jimp.read(myBlob).then(image => {
         image
@@ -14,12 +15,13 @@ module.exports = function (context, myBlob) {
                     context.done(error);
                 } else {
                     context.log('calling cog svc');
-                    axios.post(process.env.COMP_VISION_URL + '/analyze?visualFeatures=Description&language=en', myBlob, {
+                    return axios.post(process.env.COMP_VISION_URL + '/analyze?visualFeatures=Description&language=en', myBlob, {
                         headers: {
                             'Ocp-Apim-Subscription-Key': process.env.COMP_VISION_KEY,
                             'Content-Type': 'application/octet-stream'
                         }
                     }).then(response => {
+                        context.log("called cog svc complete");
                         context.log(JSON.stringify(response.data, null, 2));
                         context.bindings.thumbnail = stream;
                         var result = {
@@ -31,7 +33,7 @@ module.exports = function (context, myBlob) {
                             tags: response.data.description.tags
                         };
 
-                        var restCall = axios
+                        return axios
                         .post(
                             process.env.INDEXER_URL + "&index=imageindex",
                           result,
@@ -41,15 +43,14 @@ module.exports = function (context, myBlob) {
                         )
                         .then(response => {
                           context.log("document indexer called");
+                          context.done();
                         })
                         .catch(err => {
-                          context.log(err);
                           context.done(err);
                         });
-                        context.done(null, restCall);
+                        
 
                     }).catch(err => {
-                        context.log(JSON.stringify(err));
                         context.done(err);
                     });
 

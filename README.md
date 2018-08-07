@@ -6,13 +6,13 @@ This document walks you through building a bot that allows you to find video and
 
 1. Azure Subscription
 2. Azure Bot Emulator
-3. Node JS (version)
+3. Node JS
 4. [Optional] Visual Studio Code
 
 **Before proceeding, clone this repo to your local machine**
 
 ## Setup
-1. Create a Video Indexer Account at [https://video.ai](https://video.ai)
+1. Create a Video Indexer Account at [https://www.videoindexer.ai](https://www.videoindexer.ai)
 2. Sign up for the video indexer API at [https://api-portal.videoindexer.ai](https://api-portal.videoindexer.ai)
 3. Grab the api key and the VI ID key for the next step.
 4. Deploy the template by clicking the deploy button below
@@ -23,7 +23,7 @@ This document walks you through building a bot that allows you to find video and
 
 ## Deploy the Backend Processing
 1. Locally, navigate to the Backend folder and for each function folder run npm install.
-2. Right click and zip up the entire backend folder.
+2. From within the Backend folder, highlight the sub-folders (including host.json), right click and zip up the entire folder
 3. Navigate to the following url: `https://<yourfunctionname>.scm.azurewebsites.net/ZipDeploy`
 4. Drag and drop the zip file into the folder and wait for it to be deployed.
 5. When deployed, go to the storage account and create two containers (one called **videos** and one called **images**)

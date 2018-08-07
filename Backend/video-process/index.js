@@ -32,9 +32,8 @@ function processData(data){
     videoData.transcriptText += " " + data.videos[0].insights.transcript[x].text;
     videoData.transcriptOcr += " " + data.videos[0].insights.transcript[x].ocr;
   }
-  console.log("here" + data.accountId);
-  videoData.videoPath = "https://www.videoindexer.ai/accounts/" + data.accountId + "/videos/" + data.id;
 
+  videoData.videoPath = "https://www.videoindexer.ai/accounts/" + data.accountId + "/videos/" + data.id;
   return videoData;
 
 }
@@ -98,12 +97,11 @@ module.exports = function(context, req) {
             context.done(null, restCall);
           })
           .catch(err => {
-            context.log(err);
+            //context.log(err);
             context.done(err);
           });
       })
       .catch(err => {
-        context.log(JSON.stringify(err));
         context.done(err);
       });
   };
