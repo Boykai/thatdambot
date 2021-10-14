@@ -2,6 +2,9 @@
 
 This document walks you through building a bot that allows you to find video and picture assets. Intelligent AI is used to extract metadata from image and video assets and these are indexed in Azure Search. The bot uses NLP to allow users to query and find the right assets.
 
+## Video Overview
+[Demo Video](https://garagehackbox.azurewebsites.net/hackathons/1857/projects/79392)
+
 ## Pre-requirements
 
 1. Azure Subscription
